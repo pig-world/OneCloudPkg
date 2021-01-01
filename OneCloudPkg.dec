@@ -1,0 +1,47 @@
+#/** @file
+#
+#  Copyright (c) 2011-2017, ARM Limited. All rights reserved.
+#  Copyright (c) 2015, Intel Corporation. All rights reserved.
+#
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution.  The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+#**/
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = OneCloudPkg
+  PACKAGE_GUID                   = 3308e0a0-1d94-11e0-915c-0002a5d5c51b
+  PACKAGE_VERSION                = 0.1
+
+################################################################################
+#
+# Include Section - list of Include Paths that are provided by this package.
+#                   Comments are used for Keywords and Module Types.
+#
+# Supported Module Types:
+#  BASE SEC PEI_CORE PEIM DXE_CORE DXE_DRIVER DXE_RUNTIME_DRIVER DXE_SMM_DRIVER DXE_SAL_DRIVER UEFI_DRIVER UEFI_APPLICATION
+#
+################################################################################
+[Includes.common]
+  Include                        # Root include for the package
+
+[LibraryClasses]
+
+[Guids.common]
+  
+  gOneCloudPkgTokenSpaceGuid = { 0x510d9e0a, 0xf906, 0x4ad0, { 0x8d, 0xe5, 0xd4, 0x6a, 0x7f, 0x42, 0xfe, 0x9b } }
+
+[PcdsFeatureFlag.common]
+
+[PcdsFixedAtBuild.common]
+
+
+[PcdsFixedAtBuild.common,PcdsDynamic.common]
+  # ARM Architectural Timer Interrupt(GIC PPI) numbers
+  gOneCloudPkgTokenSpaceGuid.PcdArmArchTimerIntrNum|42|UINT32|0x00000036
